@@ -1,0 +1,14 @@
+{
+    "webpack": {
+        "binPath": "webpack/bin/webpack",
+        "unnamedArgs": [
+            "package"
+        ],
+        "foreignArgs": {
+            "p,package": "package"
+        },
+        "defaultArgs": {
+            "config": "configs/webpack/webpack.config.js"
+        }
+    }
+}
