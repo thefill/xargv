@@ -1,24 +1,22 @@
 {
     "name": "xargv",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Node package runner with ability to pass foreign args",
+    "bin": "bin/xargv",
     "main": "dist/cjs/index.js",
     "module": "dist/esm/index.js",
     "types": "dist/esm/index.d.ts",
     "scripts": {
-        "// DEV SCRIPTS //": "-------------------------------------------------------",
         "watch": "npm-watch build",
         "build": "run-s -s clean:build build:esm build:cjs",
         "build:esm": "tsc -p tsconfig.esm.json",
         "build:cjs": "tsc -p tsconfig.cjs.json",
-        "// CODE QUALITY SCRIPTS //": "----------------------------------------------",
         "lint": "tslint -c tslint.json src/**/*.ts",
         "test": "run-s clean:test test:unit test:e2e test:coverage",
         "test:unit": "jest --config jest-unit.config.json",
         "test:e2e": "jest --config jest-e2e.config.json",
         "test:watch": "jest --config jest-unit.config.json --watch",
         "test:coverage": "jest --config jest-unit.config.json --coverage",
-        "// UTILS SCRIPTS //": "-----------------------------------------------------",
         "publish:coverage": "cat ./reports/coverage/lcov.info | codacy-coverage",
         "publish:docs": "gh-pages --dist docs/ --add --message 'Automatic documentation update'",
         "docs": "run-s clean:docs docs:markdown docs:html docs:postprocess",
@@ -47,9 +45,13 @@
             "quiet": false
         }
     },
-    "dependencies": {},
+    "dependencies": {
+        "nestd": "0.0.3",
+        "esm": "3.2.25"
+    },
     "devDependencies": {
         "@types/jest": "24.0.13",
+        "@types/node": "10.14.13",
         "codacy-coverage": "3.4.0",
         "concat": "1.0.3",
         "gh-pages": "2.0.1",
