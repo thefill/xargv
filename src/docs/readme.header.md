@@ -1,5 +1,5 @@
 [//]: # (Readme partial used by an default readme page)
 
-# Jetli
+# Xargv
 
-Simple, lightweight dependency injector - supports factories, classes and primitives.
+Node package runner with ability to pass foreign args.
