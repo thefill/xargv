@@ -1,0 +1,16 @@
+#!/usr/bin/env node
+
+const passedArgs = process.argv;
+const foreignArgs = JSON.parse(process.env.ARGVX);
+
+// tslint:disable
+console.log('--------------------------');
+console.log('Args passed to the cli:', passedArgs);
+console.log('--------------------------');
+
+console.log('Args passed as process.env.ARGVX:');
+Object.keys(foreignArgs).forEach((key) => {
+    console.log(`${key} : ${foreignArgs[key]}`);
+});
+console.log('--------------------------');
+// tslint:enable

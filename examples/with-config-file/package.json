@@ -1,0 +1,15 @@
+{
+    "name": "example-with-config-file",
+    "version": "0.0.1",
+    "private": true,
+    "scripts": {
+        "start": "xargv commandName unnamedValueA unnamedValueB --flagA --flagB --inlineA inlineValueA  --inlineB inlineValueB unmatchedValue"
+    },
+    "author": "Filip Dabrowski",
+    "license": "MIT",
+    "dependencies": {
+    },
+    "devDependencies": {
+        "xargv": "0.0.3"
+    }
+}

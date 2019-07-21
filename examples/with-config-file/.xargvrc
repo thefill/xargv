@@ -1,0 +1,20 @@
+{
+    "commandName": {
+        "binPath": "../example-cli-app/bin/example",
+        "containerName": "ARGVX",
+        "unnamedArgKeys": [
+            "unnamedA",
+            "unnamedB"
+        ],
+        "foreignKeys": [
+            "unnamedA",
+            "defaultA",
+            "flagA",
+            "inlineA"
+        ],
+        "defaultArgs": {
+            "defaultA": "defaultValueA",
+            "defaultB": "defaultValueB"
+        }
+    }
+}
