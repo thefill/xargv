@@ -1,6 +1,6 @@
 {
     "name": "xargv",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "Node package runner with ability to pass foreign args",
     "bin": "bin/xargv",
     "main": "dist/cjs/index.js",

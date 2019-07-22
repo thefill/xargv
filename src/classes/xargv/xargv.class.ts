@@ -11,7 +11,9 @@ export class Xargv {
         try {
             require(Path.resolve(__dirname, path));
         } catch (error) {
-            throw new Error(`Unable to execute cli process for ${path}`);
+            // tslint:disable-next-line
+            console.error(`Unable to execute cli process for ${path}`);
+            throw new Error(error);
         }
     }
 
@@ -24,7 +26,9 @@ export class Xargv {
             try {
                 require(moduleName);
             } catch (error) {
-                throw new Error(`Unable to require module ${moduleNames}`);
+                // tslint:disable-next-line
+                console.error(`Unable to require module ${moduleNames}`);
+                throw new Error(error);
             }
         }
     }
@@ -181,7 +185,9 @@ export class Xargv {
                 }
             }
         } catch (error) {
-            return;
+            // tslint:disable-next-line
+            console.error('Unable to find xargv config. Please provide one in package.json or as .xagrvrc file.');
+            throw new Error(error);
         }
 
         if (config && path) {

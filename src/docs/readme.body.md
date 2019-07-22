@@ -40,7 +40,8 @@ In the root of the project provide .xargvrc file:
       // command name matches first ath passed to xargv
       "webpack": {
         // this is the path to cli you want to execute
-        "binPath": "webpack/bin",
+        // e.g. path to js file relative to root of project or npm bin 
+        "binPath": "node_modules/.bin/webpack",
         // this is the env variable name all your extra args will be placed in
         "containerName": "ARGVX",
         // want to pass to xargv command args without --name? Thats the map of keys
@@ -48,6 +49,11 @@ In the root of the project provide .xargvrc file:
         "unnamedArgKeys": [
             "unnamedA",
             "unnamedB"
+        ],
+        // add list of modules you want to require - replaces node -r xyz
+        // useful for e.g. dotenv config
+        "require": [
+            "dotenv/config"
         ],
         // thats the list of all args passed that should be passed as foreign vars
         "foreignKeys": [
