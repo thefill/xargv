@@ -15,6 +15,20 @@ export class Xargv {
         }
     }
 
+    /**
+     * Require modules
+     * @param {string[]} moduleNames
+     */
+    protected static requireModules(moduleNames: string[]): void {
+        for (const moduleName of moduleNames) {
+            try {
+                require(moduleName);
+            } catch (error) {
+                throw new Error(`Unable to require module ${moduleNames}`);
+            }
+        }
+    }
+
     protected nestd = new Nestd();
     protected config: IXargvConfigWrapper;
     protected configPath: string;
@@ -67,6 +81,12 @@ export class Xargv {
         }
 
         const allArgs: { [argKey: string]: string } = {};
+
+        // if we should require any module
+        if (commandConfig.require) {
+            // map unnamed arg values to keys
+            Xargv.requireModules(commandConfig.require);
+        }
 
         // if we expect unnamed args
         if (commandConfig.unnamedArgKeys) {
