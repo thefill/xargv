@@ -4,7 +4,13 @@
 // tslint:disable
 require = require('esm')(module /*, options*/);
 const Xargv = require('../dist/cjs/index.js').Xargv;
-// tslint:enable
-const xargv = new Xargv();
-// init Xargv CLI
-xargv.init(process.argv);
+run().catch((error)=>{
+   throw new Errror(error);
+});
+
+async function run() {
+    // tslint:enable
+    const xargv = new Xargv();
+    // init Xargv CLI
+    await xargv.init();
+}
