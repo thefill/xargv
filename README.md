@@ -57,7 +57,7 @@ In the root of the project provide .xargvrc file:
 <pre>{
       // command name matches first ath passed to xargv
       "webpack": {
-        // this is the path to cli yo uwant to execute
+        // this is the path to cli you want to execute
         "binPath": "webpack/bin",
         // this is the env variable name all your extra args will be placed in
         "containerName": "ARGVX",
@@ -74,7 +74,7 @@ In the root of the project provide .xargvrc file:
             "flagA",
             "inlineA"
         ],
-        // thats some args you dont want to define all over the package.json
+        // This are args you dont want to define all over the package.json
         // did you noticed one of this values will endup as foreign var? Neat!
         "defaultArgs": {
             "defaultA": "defaultValueA",
