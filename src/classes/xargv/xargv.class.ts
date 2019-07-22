@@ -9,7 +9,7 @@ export class Xargv {
      */
     protected static executeBin(path: string): void {
         try {
-            require(Path.resolve(__dirname, path));
+            require(path);
         } catch (error) {
             // tslint:disable-next-line
             console.error(`Unable to execute cli process for ${path}`);

@@ -7,9 +7,6 @@
     },
     "author": "Filip Dabrowski",
     "license": "MIT",
-    "dependencies": {
-    },
-    "devDependencies": {
-        "xargv": "0.0.3"
-    }
+    "dependencies": {},
+    "devDependencies": {}
 }
