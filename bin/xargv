@@ -5,7 +5,7 @@
 require = require('esm')(module /*, options*/);
 const Xargv = require('../dist/cjs/index.js').Xargv;
 run().catch((error)=>{
-   throw new Errror(error);
+   throw new Error(error);
 });
 
 async function run() {
